@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Список сортов чая</title>
+</head>
+<body id="top" bgcolor="#FAF6EC" text="#2B2B2B" link="#2E6B2E" vlink="#6B4E2E" alink="#B22222" leftmargin="40" topmargin="20">
+
+    <header>
+        <h1 align="center">Список сортов чая</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><b>Список сортов чая</b></li>
+        </ul>
+    </nav>
+    <hr size="2" noshade>
+
+    <details>
+        <summary><b>График</b></summary>
+        <form>
+            <h4>Значение по оси OX</h4>
+            <p>
+                <label><input type="radio" name="x" value="type" id="x_type" > Тип</label><br>
+                <label><input type="radio" name="x" value="country" id="x_country"> Страна</label><br>
+                <label><input type="radio" name="x" value="region" id="x_region"> Регион</label>
+            </p>
+            <h4>Значение по оси OY</h4>
+            <p>
+                <label><input type="checkbox" name="y" value="max" id="y_max" > Максимальная цена</label><br>
+                <label><input type="checkbox" name="y" value="min" id="y_min"> Минимальная цена</label><br>
+                <label><input type="checkbox" name="y" value="count" id="y_count"> Средняя цена</label>
+            </p>
+            <p><input type="button" value="Построить"></p>
+        </form>
+        <p>Здесь будет график</p>
+    </details>
+
+    <details>
+        <summary><b>Фильтр</b></summary>
+        <form action="#" method="get" name="filterForm">
+            <p><label>Название: <input type="text" name="name" size="25" id="f_name"></label></p>
+            <p>
+                <label>Тип: <input type="text" name="type" size="25" id="f_type" ></label>
+            </p>
+            <p><label>Страна: <input type="text" name="country" size="25" id="f_country"></label></p>
+            <p><la></la>belРегион: <input type="text" name="region" size="25" id="f_region"></label></p>
+            <p> 
+                <label>
+                Температура, °C: от 
+                <input type="number" name="tFrom" min="50" max="100" id="f_tFrom">
+                </label>
+                <label>
+                до 
+                <input type="number" name="tTo" min="50" max="100" id="f_tTo" >
+                </label>
+            </p>
+            <p>
+                <label>
+                Цена, ₽/100 г: от
+                <input type="number" name="pFrom" min="0" id="f_pFrom">
+                </label>
+                <label>
+                до
+                <input type="number" name="pTo" min="0" id="f_pTo">
+                </label>
+            </p>
+            <p>
+                <label>
+                <input type="battom" value="Найти">
+                <input type="reset" value="Сбросить">
+                </label>
+            </p>
+        </form>
+    </details>
+
+    <details>
+        <summary><b>Сортировка</b></summary>
+        <form action="#" method="get" name="sortForm">
+            <p>
+                Первый уровень:
+                <select name="sort1">
+                    <option value="0">Нет</option>
+                    <option value="1">Название</option>
+                    <option value="2">Тип</option>
+                    <option value="3">Страна</option>
+                    <option value="4">Регион</option>
+                    <option value="5">Температура</option>
+                    <option value="6">Время</option>
+                    <option value="7">Цена</option>
+                </select>
+                <label><input type="checkbox" name="desc1" value="1" id="f_desc1"> по убыванию?</label>
+            </p>
+            <p>
+                Второй уровень:
+                <select name="sort2">
+                    <option value="">Нет</option>
+                    <option value="1">Название</option>
+                    <option value="2">Тип</option>
+                    <option value="3">Страна</option>
+                    <option value="4">Регион</option>
+                    <option value="5">Температура</option>
+                    <option value="6">Время</option>
+                    <option value="7">Цена</option>
+                </select>
+                <label><input type="checkbox" name="desc2" value="1" id="f_desc2"> по убыванию?</label>
+            </p>
+            <p>
+                Третий уровень:
+                <select name="sort3">
+                    <option value="">Нет</option>
+                    <option value="1">Название</option>
+                    <option value="2">Тип</option>
+                    <option value="3">Страна</option>
+                    <option value="4">Регион</option>
+                    <option value="5">Температура</option>
+                    <option value="6">Время</option>
+                    <option value="7">Цена</option>
+                </select>
+                <label><input type="checkbox" name="desc3" value="1" id="f_desc3"> по убыванию?</label>
+            </p>
+            <p><input type="battom" value="Сортировать"></p>
+        </form>
+    </details>
+
+    <hr>
+    <h2>Таблица сортов</h2>
+    <table border="2" cellpadding="5" cellspacing="0" width="100%">
+        <thead bgcolor="#E8DFC8">
+            <tr>
+                <th align="left" width="24%">Название</th>
+                <th align="left" width="10%">Тип</th>
+                <th align="left" width="14%">Страна</th>
+                <th align="left" width="22%">Регион</th>
+                <th width="10%">Температура, °C</th>
+                <th width="10%">Время, мин</th>
+                <th width="10%">Цена, ₽/100 г</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr><td>Лун Цзин</td><td>Зелёный</td><td>Китай</td><td>Чжэцзян</td><td align="right">80</td><td align="right">3</td><td align="right">400</td></tr>
+                <tr><td>Би Ло Чунь</td><td>Зелёный</td><td>Китай</td><td>Цзянсу</td><td align="right">80</td><td align="right">3</td><td align="right">450</td></tr>
+                <tr><td>Мао Фэн</td><td>Зелёный</td><td>Китай</td><td>Аньхой</td><td align="right">80</td><td align="right">3</td><td align="right">350</td></tr>
+                <tr><td>Тай Пин Хоу Куй</td><td>Зелёный</td><td>Китай</td><td>Аньхой</td><td align="right">80</td><td align="right">3</td><td align="right">600</td></tr>
+                <tr><td>Ганпаудер</td><td>Зелёный</td><td>Китай</td><td>Чжэцзян</td><td align="right">85</td><td align="right">3</td><td align="right">200</td></tr>
+                <tr><td>Сенча</td><td>Зелёный</td><td>Япония</td><td>Сидзуока</td><td align="right">75</td><td align="right">2</td><td align="right">300</td></tr>
+                <tr><td>Гёкуро</td><td>Зелёный</td><td>Япония</td><td>Киото</td><td align="right">60</td><td align="right">2</td><td align="right">900</td></tr>
+                <tr><td>Матча</td><td>Зелёный</td><td>Япония</td><td>Удзи</td><td align="right">80</td><td align="right">1</td><td align="right">700</td></tr>
+                <tr><td>Генмайча</td><td>Зелёный</td><td>Япония</td><td>Киото</td><td align="right">80</td><td align="right">2</td><td align="right">250</td></tr>
+                <tr><td>Банча</td><td>Зелёный</td><td>Япония</td><td>Сидзуока</td><td align="right">85</td><td align="right">2</td><td align="right">150</td></tr>
+                <tr><td>Тамарёкуча</td><td>Зелёный</td><td>Япония</td><td>Кюсю</td><td align="right">80</td><td align="right">2</td><td align="right">350</td></tr>
+                <tr><td>Седжак</td><td>Зелёный</td><td>Южная Корея</td><td>Босон</td><td align="right">70</td><td align="right">2</td><td align="right">500</td></tr>
+                <tr><td>Дарджилинг</td><td>Чёрный</td><td>Индия</td><td>Западная Бенгалия</td><td align="right">95</td><td align="right">4</td><td align="right">450</td></tr>
+                <tr><td>Ассам</td><td>Чёрный</td><td>Индия</td><td>Ассам</td><td align="right">95</td><td align="right">4</td><td align="right">250</td></tr>
+                <tr><td>Нилгири</td><td>Чёрный</td><td>Индия</td><td>Тамилнад</td><td align="right">95</td><td align="right">4</td><td align="right">220</td></tr>
+                <tr><td>Сикким Темми</td><td>Чёрный</td><td>Индия</td><td>Сикким</td><td align="right">95</td><td align="right">4</td><td align="right">500</td></tr>
+                <tr><td>Диммбула</td><td>Чёрный</td><td>Шри-Ланка</td><td>Диммбула</td><td align="right">95</td><td align="right">4</td><td align="right">230</td></tr>
+                <tr><td>Нувара Элия</td><td>Чёрный</td><td>Шри-Ланка</td><td>Нувара-Элия</td><td align="right">95</td><td align="right">4</td><td align="right">300</td></tr>
+                <tr><td>Ува</td><td>Чёрный</td><td>Шри-Ланка</td><td>Ува</td><td align="right">95</td><td align="right">4</td><td align="right">280</td></tr>
+                <tr><td>Кимун</td><td>Чёрный</td><td>Китай</td><td>Аньхой</td><td align="right">90</td><td align="right">4</td><td align="right">400</td></tr>
+                <tr><td>Дянь Хун</td><td>Чёрный</td><td>Китай</td><td>Юньнань</td><td align="right">90</td><td align="right">4</td><td align="right">350</td></tr>
+                <tr><td>Лапсанг Сушонг</td><td>Чёрный</td><td>Китай</td><td>Фуцзянь</td><td align="right">95</td><td align="right">4</td><td align="right">380</td></tr>
+                <tr><td>Цзинь Цзюнь Мэй</td><td>Чёрный</td><td>Китай</td><td>Фуцзянь</td><td align="right">90</td><td align="right">4</td><td align="right">1500</td></tr>
+                <tr><td>Кенийский чёрный</td><td>Чёрный</td><td>Кения</td><td>Кериччо</td><td align="right">95</td><td align="right">4</td><td align="right">180</td></tr>
+                <tr><td>Грузинский чёрный</td><td>Чёрный</td><td>Грузия</td><td>Гурия</td><td align="right">95</td><td align="right">4</td><td align="right">120</td></tr>
+                <tr><td>Краснодарский чай</td><td>Чёрный</td><td>Россия</td><td>Краснодарский край</td><td align="right">95</td><td align="right">4</td><td align="right">200</td></tr>
+                <tr><td>Ризе</td><td>Чёрный</td><td>Турция</td><td>Ризе</td><td align="right">100</td><td align="right">5</td><td align="right">150</td></tr>
+                <tr><td>Те Гуань Инь</td><td>Улун</td><td>Китай</td><td>Фуцзянь</td><td align="right">95</td><td align="right">4</td><td align="right">600</td></tr>
+                <tr><td>Да Хун Пао</td><td>Улун</td><td>Китай</td><td>Фуцзянь</td><td align="right">95</td><td align="right">4</td><td align="right">1200</td></tr>
+                <tr><td>Шуй Сянь</td><td>Улун</td><td>Китай</td><td>Фуцзянь</td><td align="right">95</td><td align="right">4</td><td align="right">500</td></tr>
+                <tr><td>Фэн Хуан Дань Цун</td><td>Улун</td><td>Китай</td><td>Гуандун</td><td align="right">90</td><td align="right">3</td><td align="right">800</td></tr>
+                <tr><td>Дун Дин</td><td>Улун</td><td>Тайвань</td><td>Нантоу</td><td align="right">90</td><td align="right">4</td><td align="right">900</td></tr>
+                <tr><td>Алишань</td><td>Улун</td><td>Тайвань</td><td>Цзяи</td><td align="right">90</td><td align="right">4</td><td align="right">1100</td></tr>
+                <tr><td>Най Сян (молочный улун)</td><td>Улун</td><td>Тайвань</td><td>Нантоу</td><td align="right">90</td><td align="right">4</td><td align="right">700</td></tr>
+                <tr><td>Дун Фан Мэй Жэнь</td><td>Улун</td><td>Тайвань</td><td>Синьчжу</td><td align="right">85</td><td align="right">4</td><td align="right">1300</td></tr>
+                <tr><td>Бай Хао Инь Чжэнь</td><td>Белый</td><td>Китай</td><td>Фуцзянь</td><td align="right">80</td><td align="right">4</td><td align="right">1000</td></tr>
+                <tr><td>Бай Му Дань</td><td>Белый</td><td>Китай</td><td>Фуцзянь</td><td align="right">85</td><td align="right">4</td><td align="right">500</td></tr>
+                <tr><td>Шоу Мэй</td><td>Белый</td><td>Китай</td><td>Фуцзянь</td><td align="right">90</td><td align="right">4</td><td align="right">400</td></tr>
+                <tr><td>Гун Мэй</td><td>Белый</td><td>Китай</td><td>Фуцзянь</td><td align="right">90</td><td align="right">4</td><td align="right">350</td></tr>
+                <tr><td>Шу Пуэр</td><td>Пуэр</td><td>Китай</td><td>Юньнань</td><td align="right">95</td><td align="right">3</td><td align="right">400</td></tr>
+                <tr><td>Шэн Пуэр</td><td>Пуэр</td><td>Китай</td><td>Юньнань</td><td align="right">90</td><td align="right">3</td><td align="right">600</td></tr>
+                <tr><td>Лао Ча Тоу</td><td>Пуэр</td><td>Китай</td><td>Юньнань</td><td align="right">95</td><td align="right">3</td><td align="right">450</td></tr>
+                <tr><td>Гу Шу Пуэр</td><td>Пуэр</td><td>Китай</td><td>Юньнань</td><td align="right">95</td><td align="right">3</td><td align="right">1200</td></tr>
+                <tr><td>Цзюньшань Иньчжэнь</td><td>Жёлтый</td><td>Китай</td><td>Хунань</td><td align="right">80</td><td align="right">3</td><td align="right">1500</td></tr>
+                <tr><td>Мэндин Хуанья</td><td>Жёлтый</td><td>Китай</td><td>Сычуань</td><td align="right">80</td><td align="right">3</td><td align="right">1100</td></tr>
+                <tr><td>Мате</td><td>Травяной</td><td>Аргентина</td><td>Мисьонес</td><td align="right">80</td><td align="right">5</td><td align="right">300</td></tr>
+                <tr><td>Ройбуш</td><td>Травяной</td><td>ЮАР</td><td>Западный Кейп</td><td align="right">100</td><td align="right">6</td><td align="right">200</td></tr>
+                <tr><td>Каркаде</td><td>Травяной</td><td>Судан</td><td>Кордофан</td><td align="right">95</td><td align="right">5</td><td align="right">180</td></tr>
+                <tr><td>Иван-чай</td><td>Травяной</td><td>Россия</td><td>Ленинградская область</td><td align="right">95</td><td align="right">5</td><td align="right">150</td></tr>
+                <tr><td>Ромашковый чай</td><td>Травяной</td><td>Египет</td><td>Фаюм</td><td align="right">95</td><td align="right">5</td><td align="right">120</td></tr>
+                <tr><td>Гуайюса</td><td>Травяной</td><td>Эквадор</td><td>Напо</td><td align="right">90</td><td align="right">5</td><td align="right">600</td></tr>
+                <tr><td>Кудин</td><td>Травяной</td><td>Китай</td><td>Хайнань</td><td align="right">90</td><td align="right">3</td><td align="right">300</td></tr>
+                <tr><td>Масала-чай</td><td>Пряный</td><td>Индия</td><td>Ассам</td><td align="right">100</td><td align="right">5</td><td align="right">260</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <footer align="center">
+        <p>© 2026, Мир чая</p>
+        <p>Группа: Б9124-09.03.04(4)</p>
+        <p>Разработчик: Оглы Н. С. О.</p>
+    </footer>
+
+</body>
+</html>
