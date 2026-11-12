@@ -1,0 +1,244 @@
+html {
+    font-size: calc(100vw / 192);
+}
+
+body {
+    margin: 0;
+    background: #FAF6EC;
+    color: #2B2B2B;
+    font: 1.2rem "Times New Roman", Times, serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    background: #E6DDC6;
+}
+
+a { color: #2E6B2E; }
+a:visited { color: #6B4E2E; }
+a:active { color: #B22222; }
+
+/* ----- Меню ----- */
+.menu ul {
+    margin: 0;
+    padding: 0.4rem 0 0;
+    list-style: none;
+    text-align: center;
+}
+.menu li {
+    display: inline-block;
+}
+.menu a {
+    display: block;
+    padding: 0.8rem 1.3rem 0.9rem;
+    font-size: 1.3rem;
+    color: #2B2B2B;
+    text-decoration: none;
+    border-radius: 0.3rem 0.3rem 0 0;
+}
+.menu a:hover { background: #E4EFD9; }
+.menu a.active {
+    background: #4E9A4E;
+    color: #fff;
+}
+
+/* ----- Шапка ----- */
+.header {
+    box-sizing: border-box;
+    height: 3.8rem;
+    padding: 0 1.2rem;
+    background: #4E9A4E;
+    color: #fff;
+    line-height: 3.8rem;
+}
+.logo {
+    display: inline-block;
+    width: 60%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    vertical-align: middle;
+}
+.search {
+    display: inline-block;
+    width: 39%;
+    margin-top: 0.6rem;
+    text-align: right;
+    line-height: normal;
+    vertical-align: top;
+}
+.search input {
+    box-sizing: border-box;
+    width: 13.5rem;
+    height: 1.7rem;
+    padding: 0 0.3rem;
+    border: 1px solid #ccc;
+    font-size: 1.1rem;
+    vertical-align: top;
+}
+.search button {
+    box-sizing: border-box;
+    height: 1.7rem;
+    margin-left: 0.5rem;
+    padding: 0 0.8rem;
+    border: 0;
+    border-radius: 0.4rem;
+    background: #2E6B2E;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+/* ----- Галерея ----- */
+.gallery {
+    width: 90%;
+    margin: 0.8rem auto 0;
+    font-size: 0;                 /* убирает пробелы между inline-block */
+}
+.g-col {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 25%;
+    padding: 0 0.2rem;
+    vertical-align: top;
+}
+.g-col a { display: block; }
+.g-col a + a { margin-top: 0.4rem; }
+.g-col img { height: 9.6rem; }
+.g-col.big img { height: 19.6rem; }
+
+/* ----- Основной контент (3 колонки) ----- */
+.content {
+    width: 80%;
+    margin: 0.8rem auto 0;
+    font-size: 0;
+    white-space: nowrap;
+}
+.col {
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    font-size: 1.2rem;
+}
+.side   { width: 24.4%; }
+.center { width: 49%; margin: 0 0.6%; }
+
+/* Карточки */
+.card {
+    position: relative;
+    box-sizing: border-box;
+    height: 22.9rem;
+    margin-bottom: 13.4rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2.4rem;
+    overflow: hidden;
+}
+.card:last-child { margin-bottom: 0; }
+
+.card h2 {
+    margin: 0.5rem 0 0.9rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+.card p {
+    margin: 0;
+    line-height: 1.45;
+    text-align: justify;
+}
+.card .pic {
+    width: 80%;
+    height: 7.2rem;
+    margin: 0.9rem auto 0;
+    border-radius: 2.2rem;
+    background: #fff;
+    overflow: hidden;
+}
+.card .pic img { height: 100%; }
+
+/* Порядок элементов в карточках справа (сначала картинка) */
+.c2 h2, .c4 h2 { margin-top: 0.9rem; }
+.c2 .pic, .c4 .pic { margin-top: 0; }
+
+.c1 { background: #D9C9A8; }
+.c2 { background: #F2C9CF; }
+.c3 { background: #BFD9B0; }
+.c4 { background: #F5DFB0; }
+
+/* Кнопка */
+.btn {
+    position: absolute;
+    bottom: 0.7rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 0.4rem;
+    background: #2E6B2E;
+    color: #fff;
+    font: bold 1rem Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+.btn:visited { color: #fff; }
+.c1 .btn, .c3 .btn { right: 1.8rem; }
+.c2 .btn, .c4 .btn { left: 1.8rem; }
+
+/* Центральные блоки */
+.item {
+    font-size: 0;
+}
+.item.first { margin-top: 12.4rem; }
+.item.last  { margin-top: 2.4rem; }
+
+.item-img,
+.item-text {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.2rem;
+}
+.item-img { width: 25.3%; }
+.item-img img { height: 9.6rem; }
+.item-text { width: 74.5%; }
+
+.item.first .item-text { padding-left: 1.6rem; }
+.item.last .item-text {
+    padding-right: 1.6rem;
+    text-align: right;
+}
+
+.item h3,
+.box h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.4rem;
+}
+.item p,
+.box p {
+    margin: 0 0 0.4rem;
+    line-height: 1.4;
+}
+.more { display: inline-block; }
+
+/* Блок с рамкой */
+.box {
+    box-sizing: border-box;
+    margin-top: 2.3rem;
+    padding: 1rem 0.9rem 0.8rem;
+    border: 1px solid #666;
+    background: #fff;
+}
+.box .more {
+    display: block;
+    text-align: right;
+}
+
+/* ----- Футер ----- */
+.footer {
+    margin-top: 4rem;
+    padding: 1.2rem 0;
+    background: #4E9A4E;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+.footer p { margin: 0; }
